@@ -12,7 +12,7 @@ Using memestra
 
 To use memestra in your code simply decorate your functions with the decorator you wish to use. The default decorator for memestra is ``@decorator.deprecated`` and you can find more about it here_.
 
-Memestra receive one mandatory argument in the command line, which is a positional argument, or the path to file that you want to scan.
+Memestra receive one mandatory argument in the command line, a positional argument to the path of the file you want to parse.
 
 .. code-block:: console
 

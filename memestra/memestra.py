@@ -214,8 +214,11 @@ class ImportResolver(ast.NodeVisitor):
             reason = None
             # Output only the specified reason with the --reason-keyword flag
             for keyword in parent.keywords:
-                if self.reason_keyword == keyword.arg:
+                if self.reason_keyword == keyword.arg \
+                    and isinstance(keyword.arg, str):
                     reason = keyword.value.value
+                elif not isinstance(keyword.arg, str):
+                    warnings.warn("Only strings are valid reason keywords.")
             deprecated.add(make_deprecated(parent_p, reason=reason))
             return
 

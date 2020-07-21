@@ -4,12 +4,13 @@ from memestra import nbmemestra, preprocessor
 import nbformat
 from traitlets.config import Config
 from nbconvert import RSTExporter
+import sys
 
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
-TESTS_NB_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), 'misc', 'memestra_nb_demo.ipynb'))
-import sys
 sys.path.insert(0, os.path.join(this_dir, 'misc'))
+TESTS_NB_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), \
+    'misc', 'memestra_nb_demo.ipynb'))
 
 class NotebookTest(TestCase):
 
